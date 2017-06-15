@@ -1,7 +1,11 @@
-const hash = require('../lib/hash');
+const {manage, insert} = require('../lib/hash');
 
 function test (v) {
-    console.log(hash(v), v)
+    console.log(insert(v), v)
+}
+
+class Test {
+    constructor () {}
 }
 
 
@@ -22,3 +26,6 @@ test([1,2,3]);
 test([3,2,1]);
 test({a:1, b:2});
 test({b:2, a:1});
+test(new Test)
+
+manage("asdf")
