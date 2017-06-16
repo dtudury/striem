@@ -1,7 +1,8 @@
 const {hash, manage, insert} = require('../lib/hash');
 
 function test(v) {
-    hash(v, [], h => console.log(h, v))
+    console.log(hash(v, []), v);
+    //hash(v, [], h => console.log(h, v))
 }
 
 class Test {
