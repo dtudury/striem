@@ -1,7 +1,7 @@
-const {manage, insert} = require('../lib/hash');
+const {hash, manage, insert} = require('../lib/hash');
 
 function test (v) {
-    console.log(insert(v), v)
+    console.log(hash(v))
 }
 
 class Test {
@@ -26,6 +26,14 @@ test([1,2,3]);
 test([3,2,1]);
 test({a:1, b:2});
 test({b:2, a:1});
+let o = {a:1};
+o.o = o;
+test(o);
+let p = {a:1};
+p.o = p;
+test(p);
+let q = {o, p};
+test(q);
 test(new Test)
 
 manage("asdf")
