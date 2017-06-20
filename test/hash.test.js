@@ -1,8 +1,8 @@
-const {hash, manage, insert} = require('../lib/hash');
+const {store, manage, insert} = require('../lib/store');
 
 function test(v) {
-    console.log(hash(v, []), v);
-    //hash(v, [], h => console.log(h, v))
+    console.log(store(v, []), v);
+    //store(v, [], h => console.log(h, v))
 }
 
 class Test {
