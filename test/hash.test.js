@@ -1,8 +1,8 @@
-const {store, manage, insert} = require('../lib/store');
+const {reference, dereference} = require('../lib/Store');
 
 function test(v) {
-    console.log(store(v, []), v);
-    //store(v, [], h => console.log(h, v))
+    var r = reference(v);
+    console.log(r, v, dereference(r));
 }
 
 class Test {
@@ -17,11 +17,17 @@ test(1);
 test(1234);
 test(1 / 0);
 test();
-test(new Date);
-test("asdf");
+let d = new Date;
+test(d);
+test(d);
 test("null");
 test("true");
 test("1234");
+test("asdf");
+test("asdf");
+test(Symbol("test symbol"));
+test(Symbol("test symbol"));
+/*
 test([1, 2, 3]);
 test([3, 2, 1]);
 test({a: 1, b: 2});
@@ -35,3 +41,4 @@ test(p);
 let q = { o, p };
 test(q);
 test(new Test)
+*/
